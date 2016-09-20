@@ -6,7 +6,8 @@ public class Main {
 	// write your code here
         int x = 0;
         SimpleShip dot = new SimpleShip();
-        int[] location = {2,3,4};
+        int RandomNumber = (int)(Math.random()*5);
+        int[] location = {RandomNumber,RandomNumber+1,RandomNumber+2};
         dot.setLocationCells(location);
         int count = 0;
         while(x==0){

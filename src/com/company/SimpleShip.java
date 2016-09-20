@@ -5,32 +5,27 @@ package com.company;
  */
 public class SimpleShip {
     int []LocationCells;
-    int numOfHits;
+    int numOfHits = 0;
 
-    public String checkYourself(String guess){
-        int number = Integer.parseInt(guess);
-        String result = "Miss";
-        for (int j=0; j<LocationCells.length; j++){
-            if(number == LocationCells[j]){
-                numOfHits++;
-                if(numOfHits == 3){
-                    result = "Kill";
-                    break;
-                }
-                else{
-                    result = "Hit";
-                    break;
-                }
-            }
-            else{
-                result = "Miss";
-            }
-        }
-        return result;
-    }
     public void setLocationCells(int[]loc){
         LocationCells = loc;
         //System.out.println(LocationCells[2]);
     }
 
+    public String checkYourself(int guess){
+        //int number = Integer.parseInt(guess);
+        String result = "Miss";
+        for (int j=0; j<LocationCells.length; j++){
+            if(guess == LocationCells[j]){
+                result = "Hit";
+                numOfHits++;
+                break;
+            }
+        }
+        if(numOfHits == LocationCells.length){
+                result = "Kill";
+        }
+        System.out.println(result);
+        return result;
+    }
 }

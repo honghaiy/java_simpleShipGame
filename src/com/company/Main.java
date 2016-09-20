@@ -11,7 +11,7 @@ public class Main {
         int[] location = {2,3,4};
         dot.setLocationCells(location);
         //int haha = Integer.parseInt(number);
-        String num = "2";
+        String num = "4";
         String result = dot.checkYourself(num);
         System.out.println(result);
     }

@@ -9,21 +9,24 @@ public class SimpleShip {
 
     public String checkYourself(String guess){
         int number = Integer.parseInt(guess);
+        String result = "Miss";
         for (int j=0; j<LocationCells.length; j++){
             if(number == LocationCells[j]){
                 numOfHits++;
                 if(numOfHits == 3){
-                    return "Kill";
+                    result = "Kill";
+                    break;
                 }
                 else{
-                    return "Hits";
+                    result = "Hit";
+                    break;
                 }
             }
             else{
-                return "Miss";
+                result = "Miss";
             }
         }
-        return null;
+        return result;
     }
     public void setLocationCells(int[]loc){
         LocationCells = loc;

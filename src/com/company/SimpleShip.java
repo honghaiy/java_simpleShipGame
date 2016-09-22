@@ -1,29 +1,30 @@
 package com.company;
 
+import java.util.ArrayList;
+
 /**
  * Created by Hai_yang on 16/9/17.
  */
 public class SimpleShip {
-    int []LocationCells;
-    int numOfHits = 0;
+    //int []LocationCells;
+    ArrayList<Integer> LocationCells;
+    //int numOfHits = 0;
 
-    public void setLocationCells(int[]loc){
+    public void setLocationCells(ArrayList<Integer> loc){
         LocationCells = loc;
-        //System.out.println(LocationCells[2]);
     }
 
     public String checkYourself(int guess){
-        //int number = Integer.parseInt(guess);
         String result = "Miss";
-        for (int j=0; j<LocationCells.length; j++){
-            if(guess == LocationCells[j]){
-                result = "Hit";
-                numOfHits++;
-                break;
-            }
-        }
-        if(numOfHits == LocationCells.length){
+        int index = LocationCells.indexOf(guess);
+        if (index >= 0){
+            LocationCells.remove(index);
+            if(LocationCells.isEmpty()){
                 result = "Kill";
+            }
+            else{
+                result = "Hit";
+            }
         }
         System.out.println(result);
         return result;

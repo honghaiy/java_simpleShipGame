@@ -1,4 +1,5 @@
 package com.company;
+import java.util.ArrayList;
 import java.util.Scanner;
 public class Main {
 
@@ -6,8 +7,12 @@ public class Main {
 	// write your code here
         int x = 0;
         SimpleShip dot = new SimpleShip();
+        ArrayList<Integer> location = new ArrayList<>();
         int RandomNumber = (int)(Math.random()*5);
-        int[] location = {RandomNumber,RandomNumber+1,RandomNumber+2};
+        //int[] location = {RandomNumber,RandomNumber+1,RandomNumber+2};
+        location.add(RandomNumber);
+        location.add(RandomNumber+1);
+        location.add(RandomNumber+2);
         dot.setLocationCells(location);
         int count = 0;
         while(x==0){
@@ -21,6 +26,5 @@ public class Main {
                 x = 1;
             }
         }
-
     }
 }
